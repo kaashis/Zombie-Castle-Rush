@@ -1,11 +1,15 @@
 package com.zombiecastlerush.role;
 
-import com.sun.source.tree.AssertTree;
 import com.zombiecastlerush.building.Room;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This Role test provides testing method for Role class
+ * edge and normal conditions have been tested
+ * TODO: when the Room class is updated, I have to update this RoleTest
+ */
 public class RoleTest {
     private Role role = new Role(1);
     @Before
