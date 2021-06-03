@@ -54,20 +54,6 @@ public class RoleTest {
     }
 
     @Test
-    public void testGetCurrentPosition_returnCurrentRoomNumber() {
-        Assert.assertEquals(role.getCurrentPosition().getName(), "1");
-    }
-
-    @Test
-    public void testSetCurrentPosition_returnChangedRoomNumber() {
-        role.getCurrentPosition();
-        Assert.assertEquals(role.getCurrentPosition().getName(), "1");
-        Room roomTest = new Room("test2", "I am Room test2");
-        role.setCurrentPosition(roomTest);
-        Assert.assertEquals(role.getCurrentPosition().getName(), "test2");
-    }
-
-    @Test
     public void testGetHealth_returnPredefinedValue() {
         role.setHealth(100);
         Assert.assertEquals(role.getHealth(), 100);
@@ -90,4 +76,18 @@ public class RoleTest {
         role.setHealth(50);
         Assert.assertEquals(role.getHealth(), 50);
     }
+    @Test
+    public void testGetCurrentPosition_returnCurrentRoomNumber() {
+        Assert.assertEquals(role.getCurrentPosition().getName(), "1");
+    }
+
+    @Test
+    public void testSetCurrentPosition_returnChangedRoomNumber() {
+        role.getCurrentPosition();
+        Assert.assertEquals(role.getCurrentPosition().getName(), "1");
+        Room roomTest = new Room("test2", "I am Room test2");
+        role.setCurrentPosition(roomTest);
+        Assert.assertEquals(role.getCurrentPosition().getName(), "test2");
+    }
+
 }
