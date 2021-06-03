@@ -5,7 +5,6 @@ import com.zombiecastlerush.building.Room;
 
 /**
  * base class for all roles
- * TODO: add more functions and description
  */
 @JsonPropertyOrder({"id", "room", "health"})
 public class Role {
