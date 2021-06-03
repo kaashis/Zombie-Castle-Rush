@@ -2,38 +2,35 @@ package com.zombiecastlerush.building;
 
 import com.zombiecastlerush.util.Directions;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Room {
-    private int id;
-    // TODO: list or hash map for more than 4 rooms
-    private Room[] connectedRooms;
+    private String name;
+    private String description;
+    private Map<String,Room> connectedRooms = new HashMap<String,Room>();
+    private String [] items;
 
-    public Room(){
-        connectedRooms = new Room[4];
-        this.id = -1;
+    //cosntructors
+    public Room(String name, String description){
+        setName(name);
+        setDescription(description);
     }
 
-    public Room(int id){
-        this();
-        this.id = id;
+    private void setDescription(String description) {
+        this.description = description;
     }
 
-    /**
-     * TODO: what service does addRoom provide?
-     * @param anotherRoom
-     * @param direction
-     */
-    public void addRoom(Room anotherRoom, Directions direction){
-        // TODO: switch statement to connect another room to this Room
+    private void setName(String name) {
+        this.name = name;
     }
 
-    public int getId(){
-        return this.id;
+    public String getName(){
+        return this.name;
     }
 
     @Override
     public String toString(){
-        return "Room #" + getId();
+        return "Room #" + this.name;
     }
 }
