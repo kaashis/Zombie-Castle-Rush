@@ -4,8 +4,9 @@ package com.zombiecastlerush.building;
  * challenge class provides the challenge description and validation
  * TODO: more methods and attributes
  */
-class Challenge {
+public class Challenge {
     private String description;
+    private boolean cleared = true;
 
     public Challenge(String description){
         //TODO: build our Challenge
@@ -17,10 +18,13 @@ class Challenge {
 
     /**
      * TODO: what does validation() provide?
-     * @param answer
-     * @return
+     * @param value - boolean for whether or not challenge is cleared
      */
-    public boolean validation(String answer){
-        return false;
+    public void setCleared(boolean value) {
+        cleared = value;
+    }
+
+    public boolean isCleared() {
+        return cleared;
     }
 }
