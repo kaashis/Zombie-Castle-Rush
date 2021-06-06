@@ -19,7 +19,7 @@ public class Player extends Role{
 
     /**
      * TODO: move to a room by room name/description
-     * @param roomName
+     * @param roomName - name of room to travel to
      */
     public boolean moveTo(String roomName){
         Room targetRoom = this.canMoveToRoom(roomName);
@@ -29,19 +29,20 @@ public class Player extends Role{
             System.out.printf("Player %s moved from room %s to room %s\n", super.getName(), previous, super.getCurrentPosition().getName());
             return true;
         } else{
-            System.out.printf("Player %s's current room %s doesn't connect to other rooms.", super.getName(), super.getCurrentPosition().getName());
+            System.out.printf("Player %s's current room %s doesn't connect to destination room or current room challenge is not cleared.", super.getName(), super.getCurrentPosition().getName());
             return false;
         }
     }
 
     /**
      * decide next valid movement with target room name
-     * @param roomName
+     * @param roomName - name of room to travel to
      * @return Room reference if input room name is valid for my next movement
      */
     public Room canMoveToRoom(String roomName) {
         List<Room> validRooms = this.whichRoomNext();
-        if (validRooms != null) {
+        boolean cleared = this.getCurrentPosition().getChallenge().isCleared();
+        if (validRooms != null && cleared) {
             for (Room r : validRooms) {
                 if (r.getName().equalsIgnoreCase(roomName))
                     return r; // TODO: is it possible to have rooms with same name? (Xander asking)
@@ -52,7 +53,7 @@ public class Player extends Role{
 
     /**
      * helper method that provide me a list which room can i go to
-     * @return
+     * @return List of Rooms - List of available rooms to travel to.
      */
     private List<Room> whichRoomNext() {
         return (super.getCurrentPosition() == null) ? null : super.getCurrentPosition().getConnectedRooms();
