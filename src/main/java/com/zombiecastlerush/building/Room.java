@@ -9,6 +9,7 @@ public class Room {
     private String description;
     private List<Room> connectedRooms = new ArrayList<>();
     private String [] items;
+    private Challenge challenge = new Challenge("This is a test challenge");
 
     //cosntructors
     public Room(String name, String description){
@@ -39,6 +40,14 @@ public class Room {
 
     public String[] getItems() {
         return items;
+    }
+
+    public Challenge getChallenge() {
+        return challenge;
+    }
+
+    public void setChallenge(Challenge challenge) {
+        this.challenge = challenge;
     }
 
     @Override
