@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombiecastlerush.building.Castle;
 import com.zombiecastlerush.entity.Player;
 
+import java.io.FileNotFoundException;
+
 /**
  * singleton class Game
  * it provides access to a Map and a role Controller
@@ -26,7 +28,8 @@ public class Game {
     /**
      * TODO: What does start() provide?
      */
-    public void start() throws JsonProcessingException {
+    public void start() throws JsonProcessingException, FileNotFoundException, InterruptedException {
+        Splash.print();
         String userName = Prompter.getUserInput("Welcome to Zombie Castle Rush! \n\nPlease enter your name");
         player = new Player(userName);
         player.setCurrentPosition(castle.getCastleRooms().get("Castle-Hall"));

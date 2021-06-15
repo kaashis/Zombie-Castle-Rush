@@ -2,6 +2,8 @@ import com.fasterxml.jackson.core.JacksonException;
 import com.zombiecastlerush.util.Game;
 import com.zombiecastlerush.util.Prompter;
 
+import java.io.FileNotFoundException;
+
 class Main {
     public static void main(String[] args) {
         Prompter.clearScreen();
@@ -14,6 +16,10 @@ class Main {
             System.out.println("Timer is up. The end ...");
         } catch (JacksonException je) {
             System.out.println(je.getMessage());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
