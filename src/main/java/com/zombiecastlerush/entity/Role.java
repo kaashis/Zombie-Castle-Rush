@@ -74,6 +74,10 @@ public class Role extends Entity {
     @JsonSetter("currentRoom")
     public void setCurrentPosition(Room room) {
         this.currentRoom = room;
+        // update coordinates
+        if(room != null)
+            this.setCoordinates(room.getCoordinates().getDx(), room.getCoordinates().getDy());
+
     }
 
     public int getHealth() {
