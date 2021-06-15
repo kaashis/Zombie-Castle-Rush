@@ -37,6 +37,12 @@
                 </executions>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/assets</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 
     <dependencies>

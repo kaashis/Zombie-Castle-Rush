@@ -29,7 +29,7 @@ public class DesktopGame extends ApplicationAdapter {
     @Override
     public void create () {
         batch = new SpriteBatch();
-        texture = new Texture("assets/castle.jpg");
+        texture = new Texture("castle.jpg");
         font = new BitmapFont();
         sprite = new Sprite(texture, 0, 0, 1920, 1200);
         font.setColor(Color.BLACK);
