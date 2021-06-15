@@ -1,0 +1,121 @@
+[ {
+  "name" : "Shop",
+  "description" : "Welcome to our shop!",
+  "connectedRooms" : [ "Castle-Hall" ],
+  "challenge" : null,
+  "inventory" : {
+    "items" : [ {
+      "name" : "Sword",
+      "description" : "This is the sword of Destiny, made up of the Valyrian Steel",
+      "price" : 100.0
+    }, {
+      "name" : "Helmet",
+      "description" : "This is the ultimate shield which will be carried by Captain America in the distant future",
+      "price" : 50.0
+    }, {
+      "name" : "Potion",
+      "description" : "Drinking this potion will restore your health",
+      "price" : 100.0
+    } ]
+  },
+  "coordinates" : {
+    "dx" : 400,
+    "dy" : 400
+  }
+}, {
+  "name" : "West-Wing",
+  "description" : "This room is on the West side.",
+  "connectedRooms" : [ "Castle-Hall", "Draw-Bridge" ],
+  "challenge" : {
+    "question" : "What is (2+2) X (2-2)?",
+    "solution" : "0",
+    "attempts" : 0,
+    "description" : "West-Wing-Puzzle",
+    "name" : null,
+    "inventory" : {
+      "items" : [ ]
+    },
+    "cleared" : false
+  },
+  "inventory" : {
+    "items" : [ ]
+  },
+  "coordinates" : {
+    "dx" : 200,
+    "dy" : 200
+  }
+}, {
+  "name" : "Castle-Hall",
+  "description" : "This hall connects the West Wing, East Wing, the Draw Bridge and the Shop",
+  "connectedRooms" : [ "Draw-Bridge", "East-Wing", "West-Wing", "Shop" ],
+  "challenge" : {
+    "question" : "What is (2+2) X (2-2)?",
+    "solution" : "0",
+    "attempts" : 0,
+    "description" : "Castle-Hall-Puzzle",
+    "name" : null,
+    "inventory" : {
+      "items" : [ {
+        "name" : "Fork",
+        "description" : "This is a fork",
+        "price" : 5.0
+      } ]
+    },
+    "cleared" : false
+  },
+  "inventory" : {
+    "items" : [ ]
+  },
+  "coordinates" : {
+    "dx" : 200,
+    "dy" : 600
+  }
+}, {
+  "name" : "East-Wing",
+  "description" : "another room is on the East side.",
+  "connectedRooms" : [ "Castle-Hall" ],
+  "challenge" : {
+    "question" : "What is (2+2) X (2-2)?",
+    "solution" : "0",
+    "attempts" : 0,
+    "description" : "East-Wing-Puzzle",
+    "name" : null,
+    "inventory" : {
+      "items" : [ {
+        "name" : "Knife",
+        "description" : "This is a knife",
+        "price" : 25.0
+      } ]
+    },
+    "cleared" : false
+  },
+  "inventory" : {
+    "items" : [ ]
+  },
+  "coordinates" : {
+    "dx" : 600,
+    "dy" : 200
+  }
+}, {
+  "name" : "Draw-Bridge",
+  "description" : "This is the draw bridge",
+  "connectedRooms" : [ "West-Wing", "Castle-Hall" ],
+  "challenge" : {
+    "question" : "What is (2+2) X (2-2)?",
+    "solution" : "0",
+    "attempts" : 0,
+    "description" : "Draw-Bridge-Puzzle",
+    "name" : null,
+    "inventory" : {
+      "items" : [ ]
+    },
+    "cleared" : false
+  },
+  "inventory" : {
+    "items" : [ ]
+  },
+  "coordinates" : {
+    "dx" : 600,
+    "dy" : 600
+  }
+} ]

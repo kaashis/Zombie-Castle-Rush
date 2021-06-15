@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+/**
+ * this Coordinates records an entity's position on desktop GUI window
+ */
 @JsonPropertyOrder({"dx", "dy"})
 public class Coordinates {
     private int dx = -1;

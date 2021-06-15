@@ -1,5 +1,6 @@
 package com.zombiecastlerush.building;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.zombiecastlerush.entity.Entity;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

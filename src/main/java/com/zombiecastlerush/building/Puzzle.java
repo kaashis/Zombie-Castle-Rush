@@ -1,17 +1,22 @@
 package com.zombiecastlerush.building;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({"question, attempts"})
-@JsonIgnoreProperties({"solution"})
+@JsonPropertyOrder({"question", "solution", "attempts"})
+// TODO: DON'T hide this for testing only @JsonIgnoreProperties({"solution"})
 public class Puzzle extends Challenge {
 
     private int attempts;
     private String question, solution;
 
     //Constructor
-    public Puzzle(String description, String question, String solution) {
+    @JsonCreator
+    public Puzzle(@JsonProperty("description") String description,
+                  @JsonProperty("question") String question,
+                  @JsonProperty("solution") String solution) {
         super(description);
         this.attempts = 0;
         this.setQuestion(question);

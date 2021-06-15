@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * this class provides services that convert a single Item object or a list of Item objects into a Json String or .json file
  */
-class ItemFactory {
+class ItemFactory<T> {
     /**
      * read items from a .json file and convert it into a list of Item objects
      * this function can assign above list of items to Inventory reference

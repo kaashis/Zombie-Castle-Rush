@@ -1,5 +1,8 @@
 package com.zombiecastlerush.building;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.zombiecastlerush.entity.Coordinates;
 import com.zombiecastlerush.entity.Entity;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -10,8 +13,6 @@ import java.util.List;
 
 @JsonPropertyOrder({"name", "description", "connectedRooms", "challenge", "inventory"})
 public class Room extends Entity {
-    private String name;
-    private String description;
     private List<Room> connectedRooms = new ArrayList<>();
     private Challenge challenge;
 
@@ -20,6 +21,22 @@ public class Room extends Entity {
         super.setName(name);
         super.setDescription(description);
     }
+
+    @JsonCreator
+    public Room(@JsonProperty("name") String name,
+                @JsonProperty("description") String description,
+                @JsonProperty("connectedRooms") List<Room> rooms,
+                @JsonProperty("inventory") Inventory inventory,
+                @JsonProperty("challenge") Challenge challenge,
+                @JsonProperty("coordinates") Coordinates coordinates){
+        super.setName(name);
+        super.setDescription(description);
+        this.connectedRooms = rooms;
+        super.getInventory().setItems(inventory.getItems());
+        this.challenge = challenge;
+        super.setCoordinates(coordinates.getDx(), coordinates.getDy());
+    }
+
 
     public List<Room> getConnectedRooms() {
         return connectedRooms;

@@ -26,6 +26,8 @@ class DesktopLauncher implements Runnable{
     @Override
     public void run() {
         Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
+        config.setTitle("Zombie Castle Rush");
+        config.setWindowedMode(1200, 800);
         new Lwjgl3Application(this.desktopGame, config);
     }
 
@@ -40,12 +42,15 @@ class DesktopLauncher implements Runnable{
         }
     }
 
+    /**
+     * prompt the user
+     */
     public void stop(){
-        if(!this.desktopGame.isCleaned())
-            this.desktopGame.dispose();
+        if(!this.desktopGame.isCleaned() && !this.isRunning())
+            System.out.println("Please exit the game window.");
     }
 
     public boolean isRunning(){
-        return this.desktopGame == null;
+        return this.desktopGameThread == null;
     }
 }

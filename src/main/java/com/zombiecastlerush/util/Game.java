@@ -3,6 +3,8 @@ package com.zombiecastlerush.util;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zombiecastlerush.building.Castle;
 import com.zombiecastlerush.entity.Player;
 
@@ -31,10 +33,10 @@ public class Game {
      * TODO: What does start() provide?
      */
     public void start() throws JsonProcessingException {
-        desktopLauncher.start();
         String userName = Prompter.getUserInput("Welcome to Zombie Castle Rush! \n\nPlease enter your name");
         player = new Player(userName);
         player.setCurrentPosition(castle.getCastleRooms().get("Castle-Hall"));
+        desktopLauncher.start(); // starts desktop launcher after initialization
         showInstructions();
 
         while (!exit) {
@@ -46,10 +48,10 @@ public class Game {
      * TODO: what does stop() provide?
      */
     public void stop() {
+        System.out.println("Thank you for playing Zombie Castle Rush!");
         if(desktopLauncher !=null) {
             desktopLauncher.stop();
         }
-        System.out.println("Thank you for playing Zombie Castle Rush!");
         this.exit = true;
     }
 
@@ -71,5 +73,13 @@ public class Game {
 
         Prompter.getUserInput("\nPress enter to continue...");
         Prompter.clearScreen();
+    }
+
+    public Player getPlayer(){
+        return this.player;
+    }
+
+    public Castle getCastle(){
+        return this.castle;
     }
 }
