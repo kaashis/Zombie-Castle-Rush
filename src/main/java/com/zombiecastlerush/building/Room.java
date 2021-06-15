@@ -1,8 +1,5 @@
 package com.zombiecastlerush.building;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.zombiecastlerush.entity.Coordinates;
 import com.zombiecastlerush.entity.Entity;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -13,6 +10,9 @@ import java.util.List;
 
 @JsonPropertyOrder({"name", "description", "connectedRooms", "challenge", "inventory"})
 public class Room extends Entity {
+    private String name;
+    private String description;
+    private boolean isExit;
     private List<Room> connectedRooms = new ArrayList<>();
     private Challenge challenge;
 
@@ -60,6 +60,14 @@ public class Room extends Entity {
 
     public void setChallenge(Challenge challenge) {
         this.challenge = challenge;
+    }
+
+    public boolean isExit() {
+        return isExit;
+    }
+
+    public void setExit(boolean value) {
+        isExit = value;
     }
 
     @Override
