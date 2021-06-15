@@ -45,6 +45,7 @@ public class Player extends Role {
         if (targetRoom != null && roomChallengeflag) {
             String previous = this.getCurrentPosition().getName();
             this.setCurrentPosition(targetRoom);
+            this.setCoordinates(targetRoom.getCoordinates().getDx(), targetRoom.getCoordinates().getDy());
             System.out.printf(Parser.GREEN+"Player %s moved from the %s to the %s\n", this.getName(), previous, this.getCurrentPosition().getName()+Parser.GREEN);
             return true;
         } else if (targetRoom == null) {
