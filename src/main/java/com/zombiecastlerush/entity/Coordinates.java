@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({"dx", "dy"})
-class Coordinates {
+public class Coordinates {
     private int dx = -1;
     private int dy = -1;
 
@@ -26,5 +26,10 @@ class Coordinates {
 
     public int getDy(){
         return this.dy;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("{dx:%d,dy:%d}", this.dx, this.dy);
     }
 }
