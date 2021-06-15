@@ -22,7 +22,7 @@ public class CastleTest {
         castle.getCastleRooms().clear();
         assertEquals(castle.getCastleRooms().size(),0);
         castle.readItemsFromDir(inputFile);
-        assertEquals(castle.getCastleRooms().size(),5);
+        assertEquals(castle.getCastleRooms().size(),6);
         castle.writeItemsToDir(outputFile);
     }
 

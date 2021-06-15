@@ -1,8 +1,18 @@
 [ {
   "name" : "Shop",
-  "description" : "Welcome to our shop!",
-  "connectedRooms" : [ "Castle-Hall" ],
-  "challenge" : null,
+  "description" : "A strangely silent shopkeeper seems to preside over a collection of wares, oblivious or indifferent to your presence.",
+  "connectedRooms" : [ ],
+  "challenge" : {
+    "question" : "",
+    "solution" : "",
+    "attempts" : 0,
+    "description" : "",
+    "name" : null,
+    "inventory" : {
+      "items" : [ ]
+    },
+    "cleared" : false
+  },
   "inventory" : {
     "items" : [ {
       "name" : "Sword",
@@ -21,11 +31,12 @@
   "coordinates" : {
     "dx" : 400,
     "dy" : 400
-  }
+  },
+  "exit" : false
 }, {
   "name" : "West-Wing",
-  "description" : "This room is on the West side.",
-  "connectedRooms" : [ "Castle-Hall", "Draw-Bridge" ],
+  "description" : "Eerily quiet, only a box awaits you in this chamber.",
+  "connectedRooms" : [ ],
   "challenge" : {
     "question" : "What is (2+2) X (2-2)?",
     "solution" : "0",
@@ -33,7 +44,11 @@
     "description" : "West-Wing-Puzzle",
     "name" : null,
     "inventory" : {
-      "items" : [ ]
+      "items" : [ {
+        "name" : "Spoon",
+        "description" : "This is a spoon",
+        "price" : 25.0
+      } ]
     },
     "cleared" : false
   },
@@ -43,11 +58,12 @@
   "coordinates" : {
     "dx" : 200,
     "dy" : 200
-  }
+  },
+  "exit" : false
 }, {
   "name" : "Castle-Hall",
-  "description" : "This hall connects the West Wing, East Wing, the Draw Bridge and the Shop",
-  "connectedRooms" : [ "Draw-Bridge", "East-Wing", "West-Wing", "Shop" ],
+  "description" : "It is cold, dark, and empty, save for a dimly lit, white box. ",
+  "connectedRooms" : [ ],
   "challenge" : {
     "question" : "What is (2+2) X (2-2)?",
     "solution" : "0",
@@ -69,11 +85,35 @@
   "coordinates" : {
     "dx" : 200,
     "dy" : 600
-  }
+  },
+  "exit" : false
+}, {
+  "name" : "Combat-Hall",
+  "description" : "Festooned with the arms and armor of warriors past, this room is better lit than the others. In the middle of the room, a single coffin has been left slightly open, its lid closed just enough to obscure the contents from view",
+  "connectedRooms" : [ ],
+  "challenge" : {
+    "question" : "",
+    "solution" : "",
+    "attempts" : 0,
+    "description" : "Life or Death Battle",
+    "name" : null,
+    "inventory" : {
+      "items" : [ ]
+    },
+    "cleared" : false
+  },
+  "inventory" : {
+    "items" : [ ]
+  },
+  "coordinates" : {
+    "dx" : 700,
+    "dy" : 400
+  },
+  "exit" : false
 }, {
   "name" : "East-Wing",
-  "description" : "another room is on the East side.",
-  "connectedRooms" : [ "Castle-Hall" ],
+  "description" : "Another box is here. Sounds like the moans of a man in agony grow louder as you venture deeper into this room.",
+  "connectedRooms" : [ ],
   "challenge" : {
     "question" : "What is (2+2) X (2-2)?",
     "solution" : "0",
@@ -85,6 +125,10 @@
         "name" : "Knife",
         "description" : "This is a knife",
         "price" : 25.0
+      }, {
+        "name" : "Sword",
+        "description" : "The Sword of Light",
+        "price" : 100.0
       } ]
     },
     "cleared" : false
@@ -95,11 +139,12 @@
   "coordinates" : {
     "dx" : 600,
     "dy" : 200
-  }
+  },
+  "exit" : false
 }, {
   "name" : "Draw-Bridge",
-  "description" : "This is the draw bridge",
-  "connectedRooms" : [ "West-Wing", "Castle-Hall" ],
+  "description" : "The bridge is up, and there is no way to the other side. Nothing about the giant, open castle doors looks inviting, but alas, it is the only way forward. A box lays on the ground right before the doorway.",
+  "connectedRooms" : [ ],
   "challenge" : {
     "question" : "What is (2+2) X (2-2)?",
     "solution" : "0",
@@ -107,7 +152,11 @@
     "description" : "Draw-Bridge-Puzzle",
     "name" : null,
     "inventory" : {
-      "items" : [ ]
+      "items" : [ {
+        "name" : "Vase",
+        "description" : "This is a vase",
+        "price" : 5.0
+      } ]
     },
     "cleared" : false
   },
@@ -117,5 +166,6 @@
   "coordinates" : {
     "dx" : 600,
     "dy" : 600
-  }
+  },
+  "exit" : false
 } ]
