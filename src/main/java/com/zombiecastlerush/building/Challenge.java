@@ -1,5 +1,6 @@
 package com.zombiecastlerush.building;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.zombiecastlerush.entity.Entity;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -9,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 
 @JsonPropertyOrder({"description, inventory, cleared"})
+@JsonIgnoreProperties("coordinates")
 public class Challenge extends Entity {
 
     private boolean cleared;
