@@ -1,5 +1,14 @@
 package com.zombiecastlerush.building;
 
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.zombiecastlerush.entity.Coordinates;
+import com.zombiecastlerush.entity.Entity;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class Castle {
@@ -22,6 +31,7 @@ public class Castle {
         castleHall.setCoordinates(200,600);
         drawBridge.setCoordinates(600,600);
         shop.setCoordinates(400,400);
+        combatHall.setCoordinates(700,400);
 
         //add connected rooms to room
         eastWing.addConnectedRooms(castleHall, combatHall);

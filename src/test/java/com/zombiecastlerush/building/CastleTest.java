@@ -18,7 +18,7 @@ public class CastleTest {
 
     @Test
     public void testReadItemsFromDir() throws IOException {
-        assertEquals(castle.getCastleRooms().size(),5);
+        assertEquals(castle.getCastleRooms().size(),6);
         castle.getCastleRooms().clear();
         assertEquals(castle.getCastleRooms().size(),0);
         castle.readItemsFromDir(inputFile);
