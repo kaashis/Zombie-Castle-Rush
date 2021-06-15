@@ -15,6 +15,13 @@ public class Castle {
         Room drawBridge = new Room("Draw-Bridge", "This is the draw bridge");
         Shop shop = new Shop("Shop", "Welcome to our shop!");
 
+        //add coordinates
+        eastWing.setCoordinates(500,200);
+        westWing.setCoordinates(200,200);
+        castleHall.setCoordinates(200,500);
+        drawBridge.setCoordinates(500,500);
+        shop.setCoordinates(300,300);
+
         //add connected rooms to room
         eastWing.addConnectedRooms(castleHall);
         castleHall.addConnectedRooms(drawBridge, eastWing, westWing, shop);
