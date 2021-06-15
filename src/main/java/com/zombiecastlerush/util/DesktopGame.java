@@ -6,8 +6,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class DesktopGame extends ApplicationAdapter {
-    SpriteBatch batch;
-    Texture img;
+    private SpriteBatch batch;
+    private Texture img;
+    private boolean isCleaned = false;
 
     @Override
     public void create () {
@@ -27,5 +28,10 @@ public class DesktopGame extends ApplicationAdapter {
     public void dispose () {
         batch.dispose();
         img.dispose();
+        this.isCleaned = true;
+    }
+
+    public boolean isCleaned(){
+        return this.isCleaned;
     }
 }
