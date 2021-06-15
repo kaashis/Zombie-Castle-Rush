@@ -18,12 +18,11 @@ public class CastleTest {
 
     @Test
     public void testReadItemsFromDir() throws IOException {
-        System.out.println(castle.getCastleRooms().size());
+        assertEquals(castle.getCastleRooms().size(),5);
         castle.getCastleRooms().clear();
-        System.out.println(castle.getCastleRooms().size());
-
+        assertEquals(castle.getCastleRooms().size(),0);
         castle.readItemsFromDir(inputFile);
-        System.out.println(castle.getCastleRooms().size());
+        assertEquals(castle.getCastleRooms().size(),5);
         castle.writeItemsToDir(outputFile);
     }
 
