@@ -6,6 +6,7 @@ import com.zombiecastlerush.entity.Coordinates;
 import com.zombiecastlerush.entity.Entity;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.zombiecastlerush.util.Parser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -75,7 +76,7 @@ public class Room extends Entity {
 
     @Override
     public String toString() {
-        return getName();//+ "Connected Rooms: " + connectedRooms.toString(;
+        return Parser.YELLOW + getName() + Parser.ANSI_RESET;//+ "Connected Rooms: " + connectedRooms.toString(;
     }
 
     //Methods
