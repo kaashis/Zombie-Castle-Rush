@@ -5,12 +5,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({"name", "description", "price"})
-public class Item {
+public class T {
     private String name, description;
     private double price;
 
     @JsonCreator
-    public Item(
+    public T(
             @JsonProperty("name") String name,
             @JsonProperty("description") String description,
             @JsonProperty("price") double price) {
